@@ -178,7 +178,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 {
 	"memberId": 1001,
 	"actionType": "update",
-	"value": "800.00" //说明用户想充值800
+	"value": "800.00", //说明用户想充值800
 	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -187,7 +187,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 {
 	"memberId": 1001,
 	"actionType": "update",
-	"value": "-800.00" //说明用户想扣除余额800
+	"value": "-800.00", //说明用户想扣除余额800
 	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
