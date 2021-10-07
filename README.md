@@ -67,7 +67,8 @@
 
 完毕
 
-
+​    
+​    
 
 #### 2.2 余额相关接口
 
@@ -93,9 +94,7 @@
 
 ##### 2.2.3 调用示例
 
- - 查询余额
- 
- - - 传入参数
+ - 查询余额传入参数
 
 ```json
 {
@@ -104,41 +103,62 @@
 }
 ```
 
-```json
-{
-	"memberId": 1001,
-	"actionType": "update",
-	"value": "1000.00"
-}
-```
+ - 查询余额返回参数（成功）
 
-```json
-{
-	"memberId": 1001,
-	"actionType": "update",
-	"value": "-2000.00"
-}
-```
-
- - - 返回结果
- 
 ```json
 {
 	"result": 1,
-	"token": "d61054d8b02bf09048850a1c4ddab37a90fed3b0",
+	"balanceAfterAction": "1000.00", //说明此用户当前余额为1000.00
 	"msg": "success"
 }
 ```
 
- - 失败
+ - 查询余额返回参数（失败）
 
 ```json
 {
 	"result": 0,
-	"token": null,
-	"msg": "用户ID为必填项"
+	"balanceAfterAction": null,
+	"msg": "用户未找到"
+}
+
+ - 更新余额传入参数
+
+```json
+{
+	"memberId": 1001,
+	"actionType": "update",
+	"value": "800.00" //说明用户想充值800.00
 }
 ```
+
+```json
+{
+	"memberId": 1001,
+	"actionType": "update",
+	"value": "-800.00" //说明用户想扣除余额800.00
+}
+```
+
+ - 更新余额返回参数（成功）
+
+```json
+{
+	"result": 1,
+	"balanceAfterAction": "1800.00", //说明此用户更新完之后的余额为1800.00
+	"msg": "success"
+}
+```
+
+ - 查询余额返回参数（失败）
+
+```json
+{
+	"result": 0,
+	"balanceAfterAction": "100.00",
+	"msg": "用户当前余额为100.00，无法扣除800.00，扣除金额不可大于余额"
+}
+
 
 ##### 2.1.4 备注
 
