@@ -62,7 +62,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 向我系统推送会员信息，如果memberId为第一次推送，会在我系统自动注册为新会员并自动登录，如果memberId已存在（之前有推送过），则会自动登录。
 
-请求地址：`{apiAddress}/union-api/user/info`
+请求地址：`{apiAddress}/union-api/user-info`
 
 ##### 2.1.1 传入参数  
 
@@ -121,7 +121,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 用于查询会员余额，或更新会员余额
 
-请求地址：`{apiAddress}/union-api/user/balance`
+请求地址：`{apiAddress}/union-api/user-balance`
 
 ##### 2.2.1 传入参数  
 
@@ -157,7 +157,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 ```json
 {
 	"result": 1,
-	"balanceAfterAction": "1000.00", //说明此用户当前余额为1000.00
+	"balanceAfterAction": "1000.00", //说明此用户当前余额为1000
 	"msg": "success"
 }
 ```
@@ -178,7 +178,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 {
 	"memberId": 1001,
 	"actionType": "update",
-	"value": "800.00" //说明用户想充值800.00,
+	"value": "800.00" //说明用户想充值800
 	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -187,7 +187,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 {
 	"memberId": 1001,
 	"actionType": "update",
-	"value": "-800.00" //说明用户想扣除余额800.00,
+	"value": "-800.00" //说明用户想扣除余额800
 	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
@@ -197,7 +197,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 ```json
 {
 	"result": 1,
-	"balanceAfterAction": "1800.00", //说明此用户更新完之后的余额为1800.00
+	"balanceAfterAction": "1800.00", //说明此用户更新完之后的余额为1800
 	"msg": "success"
 }
 ```
