@@ -50,7 +50,7 @@
 ```json
 {
 	"result": 0,
-	"token": NULL,
+	"token": null,
 	"msg": "用户ID为必填项"
 }
 ```
