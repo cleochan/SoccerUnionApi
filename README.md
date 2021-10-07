@@ -98,7 +98,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 {
 	"result": 0,
 	"token": null,
-	"msg": "用户ID为必填项"
+	"msg": "签名不正确"
 }
 ```
 
