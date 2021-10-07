@@ -33,8 +33,27 @@
 | token     | string | 32 | 一次性访问令牌，请让用户携带此令牌访问我系统，即可识别身份  |
 | msg     | string | 1 < length < 100 | 如出错时，返回出错原因，成功时为success |
 
+##### 2.1.3 返回示例
 
+ - 成功
 
+```json
+{
+	"result": 1,
+	"token": "d61054d8b02bf09048850a1c4ddab37a90fed3b0",
+	"msg": "success"
+}
+```
+
+ - 失败
+
+```json
+{
+	"result": 0,
+	"token": NULL,
+	"msg": "用户ID为必填项"
+}
+```
 
 
 - 用户信息注册  
