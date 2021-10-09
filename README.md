@@ -301,7 +301,46 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 ```json
 {
 	"result": 1,
-	"balanceAfterAction": "1000.00", //说明此用户当前余额为1000
+	"data": [{
+		"orderId": 23878254,
+		"matchId": 105037997,
+		"leagueNameCn": "美女超",
+		"leagueNameEn": "USA WPSL Women",
+		"homeTeamNameCn": "芝加哥城SC女足",
+		"homeTeamNameEn": "Chicago City SC Women",
+		"awayTeamNameCn": "密尔沃基巴伐利亚女足",
+		"awayTeamNameEn": "Milwaukee Bavarian SC Women",
+		"homeHalfResult": 2,
+		"awayHalfResult": 1,
+		"homeFinalResult": 3,
+		"awayFinalResult": 3,
+		"homeBetScore": 3,
+		"awayBetScore": 1,
+		"betType": 1, //投注全场
+		"status": 1, //赢
+		"createTime": "2021-10-01 12:30:35",
+		"payTime": "2021-10-01 12:35:01"
+	}, {
+		"orderId": 23878611,
+		"matchId": "MD330976323", //注意matchId可能带有英文字母
+		"leagueNameCn": "孟冠联",
+		"leagueNameEn": "Bangladesh Championship League",
+		"homeTeamNameCn": "法奇拉坡尔",
+		"homeTeamNameEn": "Fakirapool Young Men's Club",
+		"awayTeamNameCn": "福提斯",
+		"awayTeamNameEn": "Fortis FC",
+		"homeHalfResult": 1,
+		"awayHalfResult": 1,
+		"homeFinalResult": 2,
+		"awayFinalResult": 1,
+		"homeBetScore": 1,
+		"awayBetScore": 1,
+		"betType": 2, //投注半场
+		"status": 2, //输
+		"createTime": "2021-10-01 12:30:35",
+		"payTime": null
+	}],
+	"totalPages": 2,
 	"msg": "success"
 }
 ```
@@ -311,47 +350,9 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 ```json
 {
 	"result": 0,
-	"balanceAfterAction": null,
-	"msg": "用户未找到"
+	"data": [],
+	"totalPages": null,
+	"msg": "页码不存在"
 }
 ```
 
- - 更新余额传入参数
-
-```json
-{
-	"memberId": 1001,
-	"actionType": "update",
-	"value": "800.00", //说明用户想充值800
-	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
-}
-```
-
-```json
-{
-	"memberId": 1001,
-	"actionType": "update",
-	"value": "-800.00", //说明用户想扣除余额800
-	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
-}
-```
-
- - 更新余额返回参数（成功）
-
-```json
-{
-	"result": 1,
-	"balanceAfterAction": "1800.00", //说明此用户更新完之后的余额为1800
-	"msg": "success"
-}
-```
-
- - 查询余额返回参数（失败）
-
-```json
-{
-	"result": 0,
-	"balanceAfterAction": "100.00",
-	"msg": "用户当前余额为100.00，无法扣除800.00，扣除金额不可大于余额"
-}
-```
