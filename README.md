@@ -276,9 +276,9 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | homeBetScore     | int | 1 <= length <= 2 | 主队下单比分  |
 | awayBetScore     | int | 1 <= length <= 2 | 客队下单比分  |
 | betType     | int | 1 | 1=全场 2=半场  |
-| status     | string | - | 0=未结算 1=赢 2=输 3=订单取消  |
-| createTime     | string | - | 订单生成时间  |
-| payTime     | string | - | 派彩时间  |
+| status     | int | 1 | 0=未结算 1=赢 2=输 3=订单取消  |
+| createTime     | datetime | - | 订单生成时间  |
+| payTime     | datetime | - | 派彩时间  |
 
 ##### 2.3.3 调用示例
 
