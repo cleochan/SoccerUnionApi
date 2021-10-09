@@ -238,23 +238,24 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 请求地址：`{apiAddress}/union-api/user-orders`
 
-##### 2.2.1 传入参数  
+##### 2.3.1 传入参数  
 
 | 参数名    | 必选 | 类型   | 字段长度        | 说明     |
 | --------- | ---- | ------ | --------------- | -------- |
 | memberId   | 是   | int | 0 < length < 11 | 用户ID |
 | startTime  | 是   | datetime | - | 搜索开始时间(包含这一秒)     |
 | endTime  | 是   | datetime | - | 搜索开始时间(不包含这一秒)     |
-| pageId  | 否   | int | 1 <= length <= 3 | 页码，留空则自动拉取第1页     |
-| sort  | 否   | strin | 3 <= length <= 4 | asc=正序，desc=倒序，留空则默认为desc    |
+| pageId  | 否   | int | 1 <= length <= 3 | 页码，留空则自动拉取第1页，每页最多返回1000条     |
+| sort  | 否   | string | 3 <= length <= 4 | asc=正序，desc=倒序，留空则默认为desc    |
 | sign  | 是   | string | 32 | 签名     |
 
-##### 2.2.2 返回参数  
+##### 2.3.2 返回参数  
 
 | 参数名     | 类型   | 字段长度        | 说明     |
 | ---------  | ------ | --------------- | -------- |
 | result      | int | 1 | 调用结果，1=成功 0=失败 |
 | data     | array | - | 订单数据，参考以下表格  |
+| totalPages     | int | 1 < length < 4 | 总页数，如果大于1说明后面还有页数，需翻页 |
 | msg     | string | 1 < length < 100 | 如出错时，返回出错原因，成功时为success |
 
   >> data订单数据格式
@@ -280,19 +281,22 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | createTime     | string | - | 订单生成时间  |
 | payTime     | string | - | 派彩时间  |
 
-##### 2.2.3 调用示例
+##### 2.3.3 调用示例
 
- - 查询余额传入参数
+ - 传入参数
 
 ```json
 {
 	"memberId": 1001,
-	"actionType": "check",
+	"startTime": "2021-10-01 00:00:00",
+	"endTime": "2021-10-01 23:59:59",
+	"pageId": 1,
+	"sort": "desc",
 	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
 }
 ```
 
- - 查询余额返回参数（成功）
+ - 返回参数
 
 ```json
 {
