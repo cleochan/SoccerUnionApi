@@ -297,10 +297,10 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | awayHalfResult     | int | 1 <= length <= 2 | 客队半场比分  |
 | homeFinalResult     | int | 1 <= length <= 2 | 主队全场比分  |
 | awayFinalResult     | int | 1 <= length <= 2 | 客队全场比分  |
-| homeBetScore     | int | 1 <= length <= 2 | 主队下单比分  |
-| awayBetScore     | int | 1 <= length <= 2 | 客队下单比分  |
+| homeBetScore     | int | 1 <= length <= 2 | 下单主队比分  |
+| awayBetScore     | int | 1 <= length <= 2 | 下单客队比分  |
 | betType     | int | 1 | 1=全场 2=半场  |
-| status     | int | 1 | 0=未结算 1=赢 2=输 3=订单取消  |
+| status     | int | 1 | 0=未返利 1=赢 2=输 3=订单取消  |
 | createTime     | datetime | - | 订单生成时间  |
 | payTime     | datetime | - | 派彩时间  |
 
