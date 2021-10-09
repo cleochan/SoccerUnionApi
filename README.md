@@ -244,7 +244,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | --------- | ---- | ------ | --------------- | -------- |
 | memberId   | 是   | int | 0 < length < 11 | 用户ID |
 | startTime  | 是   | datetime | - | 搜索开始时间(包含这一秒)     |
-| endTime  | 是   | datetime | - | 搜索开始时间(不包含这一秒)     |
+| endTime  | 是   | datetime | - | 搜索结束时间(不包含这一秒)     |
 | pageId  | 否   | int | 1 <= length <= 3 | 页码，留空则自动拉取第1页，每页最多返回1000条     |
 | sort  | 否   | string | 3 <= length <= 4 | asc=正序，desc=倒序，留空则默认为desc    |
 | sign  | 是   | string | 32 | 签名     |
@@ -263,7 +263,6 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | 参数名     | 类型   | 字段长度        | 说明     |
 | ---------  | ------ | --------------- | -------- |
 | orderId      | decimal | 7 <= length <= 18 | 订单号 |
-| matchId     | string | 7 <= length <= 20 | 赛事ID  |
 | leagueNameCn     | string | 5 <= length <= 50 | 联赛名(中文)  |
 | leagueNameEn     | string | 5 <= length <= 100 | 联赛名(英文)  |
 | homeTeamNameCn     | string | 5 <= length <= 50 | 主队名(中文)  |
@@ -303,7 +302,6 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 	"result": 1,
 	"data": [{
 		"orderId": 23878254,
-		"matchId": 105037997,
 		"leagueNameCn": "美女超",
 		"leagueNameEn": "USA WPSL Women",
 		"homeTeamNameCn": "芝加哥城SC女足",
@@ -322,7 +320,6 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 		"payTime": "2021-10-01 12:35:01"
 	}, {
 		"orderId": 23878611,
-		"matchId": "MD330976323", //注意matchId可能带有英文字母
 		"leagueNameCn": "孟冠联",
 		"leagueNameEn": "Bangladesh Championship League",
 		"homeTeamNameCn": "法奇拉坡尔",
