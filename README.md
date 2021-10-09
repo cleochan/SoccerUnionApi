@@ -300,6 +300,9 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | homeBetScore     | int | 1 <= length <= 2 | 下单主队比分  |
 | awayBetScore     | int | 1 <= length <= 2 | 下单客队比分  |
 | betType     | int | 1 | 1=全场 2=半场  |
+| betValue     | decimal | 16,2 | 下注金额  |
+| bonusRate     | decimal | 10,4 | 获利率  |
+| bonus     | decimal | 16,2 | 获利  |
 | status     | int | 1 | 0=未返利 1=赢 2=输 3=订单取消  |
 | createTime     | datetime | - | 订单生成时间  |
 | payTime     | datetime | - | 派彩时间  |
@@ -339,6 +342,9 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 		"homeBetScore": 3,
 		"awayBetScore": 1,
 		"betType": 1, //投注全场
+		"betValue": 10000.00,
+		"bonusRate": 12.5100,
+		"bonus": 1188.45,
 		"status": 1, //赢
 		"createTime": "2021-10-01 12:30:35",
 		"payTime": "2021-10-01 12:35:01"
@@ -357,6 +363,9 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 		"homeBetScore": 1,
 		"awayBetScore": 1,
 		"betType": 2, //投注半场
+		"betValue": 2000.00,
+		"bonusRate": 3.3000,
+		"bonus": -2000.00,
 		"status": 2, //输
 		"createTime": "2021-10-01 12:30:35",
 		"payTime": null
