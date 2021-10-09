@@ -227,3 +227,127 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 	"msg": "用户当前余额为100.00，无法扣除800.00，扣除金额不可大于余额"
 }
 ```
+
+
+​    
+​    
+
+#### 2.3 会员订单历史记录
+
+用于查询会员的历史订单
+
+请求地址：`{apiAddress}/union-api/user-orders`
+
+##### 2.2.1 传入参数  
+
+| 参数名    | 必选 | 类型   | 字段长度        | 说明     |
+| --------- | ---- | ------ | --------------- | -------- |
+| memberId   | 是   | int | 0 < length < 11 | 用户ID |
+| startTime  | 是   | datetime | - | 搜索开始时间(包含这一秒)     |
+| endTime  | 是   | datetime | - | 搜索开始时间(不包含这一秒)     |
+| pageId  | 否   | int | 1 <= length <= 3 | 页码，留空则自动拉取第1页     |
+| sort  | 否   | strin | 3 <= length <= 4 | asc=正序，desc=倒序，留空则默认为desc    |
+| sign  | 是   | string | 32 | 签名     |
+
+##### 2.2.2 返回参数  
+
+| 参数名     | 类型   | 字段长度        | 说明     |
+| ---------  | ------ | --------------- | -------- |
+| result      | int | 1 | 调用结果，1=成功 0=失败 |
+| data     | array | - | 订单数据，参考以下表格  |
+| msg     | string | 1 < length < 100 | 如出错时，返回出错原因，成功时为success |
+
+  >> data订单数据格式
+
+| 参数名     | 类型   | 字段长度        | 说明     |
+| ---------  | ------ | --------------- | -------- |
+| orderId      | decimal | 7 <= length <= 18 | 订单号 |
+| matchId     | string | 7 <= length <= 20 | 赛事ID  |
+| leagueNameCn     | string | 5 <= length <= 50 | 联赛名(中文)  |
+| leagueNameEn     | string | 5 <= length <= 100 | 联赛名(英文)  |
+| homeTeamNameCn     | string | 5 <= length <= 50 | 主队名(中文)  |
+| homeTeamNameEn     | string | 5 <= length <= 100 | 主队名(英文)  |
+| awayTeamNameCn     | string | 5 <= length <= 50 | 客队名(中文)  |
+| awayTeamNameEn     | string | 5 <= length <= 100 | 客队名(英文)  |
+| homeHalfResult     | int | 1 <= length <= 2 | 主队半场比分  |
+| awayHalfResult     | int | 1 <= length <= 2 | 客队半场比分  |
+| homeFinalResult     | int | 1 <= length <= 2 | 主队全场比分  |
+| awayFinalResult     | int | 1 <= length <= 2 | 客队全场比分  |
+| homeBetScore     | int | 1 <= length <= 2 | 主队下单比分  |
+| awayBetScore     | int | 1 <= length <= 2 | 客队下单比分  |
+| betType     | int | 1 | 1=全场 2=半场  |
+| status     | string | - | 0=未结算 1=赢 2=输 3=订单取消  |
+| createTime     | string | - | 订单生成时间  |
+| payTime     | string | - | 派彩时间  |
+
+##### 2.2.3 调用示例
+
+ - 查询余额传入参数
+
+```json
+{
+	"memberId": 1001,
+	"actionType": "check",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+ - 查询余额返回参数（成功）
+
+```json
+{
+	"result": 1,
+	"balanceAfterAction": "1000.00", //说明此用户当前余额为1000
+	"msg": "success"
+}
+```
+
+ - 查询余额返回参数（失败）
+
+```json
+{
+	"result": 0,
+	"balanceAfterAction": null,
+	"msg": "用户未找到"
+}
+```
+
+ - 更新余额传入参数
+
+```json
+{
+	"memberId": 1001,
+	"actionType": "update",
+	"value": "800.00", //说明用户想充值800
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+```json
+{
+	"memberId": 1001,
+	"actionType": "update",
+	"value": "-800.00", //说明用户想扣除余额800
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+ - 更新余额返回参数（成功）
+
+```json
+{
+	"result": 1,
+	"balanceAfterAction": "1800.00", //说明此用户更新完之后的余额为1800
+	"msg": "success"
+}
+```
+
+ - 查询余额返回参数（失败）
+
+```json
+{
+	"result": 0,
+	"balanceAfterAction": "100.00",
+	"msg": "用户当前余额为100.00，无法扣除800.00，扣除金额不可大于余额"
+}
+```
