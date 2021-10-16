@@ -288,6 +288,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | ---------  | ------ | --------------- | -------- |
 | orderId      | decimal | 7 <= length <= 18 | 订单号 |
 | memberId      | int | 0 < length < 11 | 用户ID |
+| userName      | string | 1 < length < 50 | 用户名 |
 | leagueNameCn     | string | 5 <= length <= 50 | 联赛名(中文)  |
 | leagueNameEn     | string | 5 <= length <= 100 | 联赛名(英文)  |
 | homeTeamNameCn     | string | 5 <= length <= 50 | 主队名(中文)  |
@@ -331,6 +332,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 	"data": [{
 		"orderId": 23878254,
 		"memberId": 1001,
+		"userName": "abc123",
 		"leagueNameCn": "美女超",
 		"leagueNameEn": "USA WPSL Women",
 		"homeTeamNameCn": "芝加哥城SC女足",
@@ -353,6 +355,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 	}, {
 		"orderId": 23878611,
 		"memberId": 1001,
+		"userName": "abc123",
 		"leagueNameCn": "孟冠联",
 		"leagueNameEn": "Bangladesh Championship League",
 		"homeTeamNameCn": "法奇拉坡尔",
