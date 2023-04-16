@@ -273,7 +273,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | sort  | 否   | string | 3 <= length <= 4 | asc=正序，desc=倒序，留空则默认为desc    |
 | sign  | 是   | string | 32 | 签名     |
 
-<span style="color:green">下单和更新时间必须二选一，不可同时为空</span>
+***下单和更新时间必须二选一，不可同时为空***
 
 ##### <span id="232-----">2.3.2 返回参数</span>
 
@@ -354,7 +354,8 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 		"bonus": 1188.45,
 		"status": 1, //赢
 		"createTime": "2021-10-01 12:30:35",
-		"payTime": "2021-10-01 12:35:01"
+		"payTime": "2021-10-01 12:35:01",
+		"updatedTime": "2021-10-01 12:35:01"
 	}, {
 		"orderId": 23878611,
 		"memberId": 1001,
@@ -377,7 +378,8 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 		"bonus": -2000.00,
 		"status": 2, //输
 		"createTime": "2021-10-01 12:30:35",
-		"payTime": null
+		"payTime": null,
+		"updatedTime": null
 	}],
 	"totalPages": 2, //还有第2页，传入参数里pageId改为2，可获取第2页内容
 	"msg": "success"
