@@ -265,13 +265,15 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | 参数名    | 必选 | 类型   | 字段长度        | 说明     |
 | --------- | ---- | ------ | --------------- | -------- |
 | memberId   | 否   | int | 0 < length < 11 | 用户ID，如果不传会返回所有用户的订单 |
-| startTime  | 否   | datetime | - | 下单时间：开始时间(包含这一秒) 下单和更新时间必须二选一，不可同时为空    |
-| endTime  | 否   | datetime | - | 下单时间：结束时间(不包含这一秒) 下单和更新时间必须二选一，不可同时为空    |
-| startUpdatedTime  | 否   | datetime | - | 更新时间：开始时间(包含这一秒) 下单和更新时间必须二选一，不可同时为空    |
-| endUpdatedTime  | 否   | datetime | - | 更新时间：结束时间(不包含这一秒) 下单和更新时间必须二选一，不可同时为空    |
+| startTime  | 否   | datetime | - | 下单时间：开始时间(包含这一秒)     |
+| endTime  | 否   | datetime | - | 下单时间：结束时间(不包含这一秒)    |
+| startUpdatedTime  | 否   | datetime | - | 更新时间：开始时间(包含这一秒)     |
+| endUpdatedTime  | 否   | datetime | - | 更新时间：结束时间(不包含这一秒)     |
 | pageId  | 否   | int | 1 <= length <= 3 | 页码，留空则自动拉取第1页，每页最多返回1000条     |
 | sort  | 否   | string | 3 <= length <= 4 | asc=正序，desc=倒序，留空则默认为desc    |
 | sign  | 是   | string | 32 | 签名     |
+
+//下单和更新时间必须二选一，不可同时为空
 
 ##### <span id="232-----">2.3.2 返回参数</span>
 
