@@ -273,7 +273,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | sort  | 否   | string | 3 <= length <= 4 | asc=正序，desc=倒序，留空则默认为desc    |
 | sign  | 是   | string | 32 | 签名     |
 
-//下单和更新时间必须二选一，不可同时为空
+<span style="color:red">下单和更新时间必须二选一，不可同时为空</span>
 
 ##### <span id="232-----">2.3.2 返回参数</span>
 
