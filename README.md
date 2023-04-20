@@ -290,7 +290,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | ---------  | ------ | --------------- | -------- |
 | orderId      | decimal | 7 <= length <= 18 | 订单号 |
 | memberId      | int | 0 < length < 11 | 用户ID |
-| matchId      | int | 0 < length < 15 | 赛事ID |
+| matchId      | string | 0 < length < 20 | 赛事ID(可能带有英文字母) |
 | kickoffTime     | datetime | - | 开赛时间  |
 | userName      | string | 1 < length < 50 | 用户名 |
 | leagueNameCn     | string | 5 <= length <= 50 | 联赛名(中文)  |
@@ -337,6 +337,8 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 	"data": [{
 		"orderId": 23878254,
 		"memberId": 1001,
+		"matchId": "EHK987287615",
+		"kickoffTime": "2023-04-20 22:00:00",
 		"userName": "abc123",
 		"leagueNameCn": "美女超",
 		"leagueNameEn": "USA WPSL Women",
@@ -361,6 +363,8 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 	}, {
 		"orderId": 23878611,
 		"memberId": 1001,
+		"matchId": "9846737835",
+		"kickoffTime": "2023-04-20 22:00:00",
 		"userName": "abc123",
 		"leagueNameCn": "孟冠联",
 		"leagueNameEn": "Bangladesh Championship League",
