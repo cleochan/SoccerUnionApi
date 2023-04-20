@@ -405,3 +405,103 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 }
 ```
 
+
+​    
+​    
+
+#### <span id="24-----">2.4 查询余额更新状态</span>
+
+会员余额增加或扣减后，可通过本接口查询状态以确认操作是否成功。
+
+请求地址：`{apiAddress}/union-api/balance-update-results`
+
+##### <span id="241-----">2.4.1 传入参数</span>
+
+| 参数名    | 必选 | 类型   | 字段长度        | 说明     |
+| --------- | ---- | ------ | --------------- | -------- |
+| clientOrderId  | 否   | string | 1 < length < 1024 | 支持传单个或多个clientOrderId，如需传多个请用`\｜`隔开，例如aaa\|bbb\|ccc     |
+| sign  | 是   | string | 32 | 签名     |
+
+##### <span id="222-----">2.2.2 返回参数</span>
+
+| 参数名     | 类型   | 字段长度        | 说明     |
+| ---------  | ------ | --------------- | -------- |
+| result      | int | 1 | 调用结果，1=成功 0=失败 |
+| balanceAfterAction     | decimal | 长度15，小数点2位 | check时返回用户当前余额，update时返回用户余额更新之后的最新余额  |
+| msg     | string | 1 < length < 100 | 如出错时，返回出错原因，成功时为success |
+
+##### <span id="223-----">2.2.3 调用示例</span>
+
+ - 查询余额传入参数
+
+```json
+{
+	"memberId": 1001,
+	"actionType": "check",
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+ - 查询余额返回参数（成功）
+
+```json
+{
+	"result": 1,
+	"balanceAfterAction": "1000.00", //说明此用户当前余额为1000
+	"msg": "success"
+}
+```
+
+ - 查询余额返回参数（失败）
+
+```json
+{
+	"result": 0,
+	"balanceAfterAction": null,
+	"msg": "用户未找到"
+}
+```
+
+ - 更新余额传入参数
+
+```json
+{
+	"memberId": 1001,
+	"actionType": "update",
+	"value": "800.00", //说明用户想充值800
+	"clientOrderId": "ab123456", //第三方订单号
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+```json
+{
+	"memberId": 1001,
+	"actionType": "update",
+	"value": "-800.00", //说明用户想扣除余额800
+	"sign": "cbc0b11733b785b0317f1cc7d6f20fd8"
+}
+```
+
+ - 更新余额返回参数（成功）
+
+```json
+{
+	"result": 1,
+	"balanceAfterAction": "1800.00", //说明此用户更新完之后的余额为1800
+	"msg": "success"
+}
+```
+
+ - 查询余额返回参数（失败）
+
+```json
+{
+	"result": 0,
+	"balanceAfterAction": "100.00",
+	"msg": "用户当前余额为100.00，无法扣除800.00，扣除金额不可大于余额"
+}
+```
+
+
+
