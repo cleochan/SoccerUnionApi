@@ -423,7 +423,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 | 参数名    | 必选 | 类型   | 字段长度        | 说明     |
 | --------- | ---- | ------ | --------------- | -------- |
-| clientOrderId  | 否   | string | 1 < length < 1024 | 支持传单个或多个clientOrderId，如需传多个请用`｜`隔开，例如aaa\|bbb\|ccc     |
+| clientOrderId  | 否   | string | 1 < length < 1024 | 支持传单个或多个clientOrderId，如需传多个请用`｜`隔开，例如aaa\|bbb\|ccc，最多一次性查询100条     |
 | sign  | 是   | string | 32 | 签名     |
 
 ##### <span id="242-----">2.4.2 返回参数</span>
