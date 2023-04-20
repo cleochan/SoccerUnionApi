@@ -305,7 +305,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | awayBetScore     | int | 1 <= length <= 2 | 下单客队比分  |
 | betType     | int | 1 | 1=全场 2=半场  |
 | betValue     | decimal | 长度16，小数点2位 | 下注金额  |
-| bonusRate     | decimal | 长度10，小数点4位 | 获利率  |
+| bonusRate     | decimal | 长度10，小数点4位 | 获利率。例如12.2500代表获利率为12.25%  |
 | bonus     | decimal | 长度16，小数点2位 | 获利  |
 | status     | int | 1 | 0=未返利 1=赢 2=输 3=订单取消  |
 | createTime     | datetime | - | 订单生成时间  |
