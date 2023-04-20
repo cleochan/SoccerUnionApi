@@ -290,6 +290,8 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | ---------  | ------ | --------------- | -------- |
 | orderId      | decimal | 7 <= length <= 18 | 订单号 |
 | memberId      | int | 0 < length < 11 | 用户ID |
+| matchId      | int | 0 < length < 15 | 赛事ID |
+| kickoffTime     | datetime | - | 开赛时间  |
 | userName      | string | 1 < length < 50 | 用户名 |
 | leagueNameCn     | string | 5 <= length <= 50 | 联赛名(中文)  |
 | leagueNameEn     | string | 5 <= length <= 100 | 联赛名(英文)  |
