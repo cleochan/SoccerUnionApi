@@ -108,7 +108,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 | 参数名    | 必选 | 类型   | 字段长度        | 说明     |
 | --------- | ---- | ------ | --------------- | -------- |
-| memberId   | 是   | int | 0 < length < 11 | 用户ID |
+| memberId   | 是   | int | 0 < length <= 15 | 用户ID |
 | userName  | 是   | string | 1 < length < 50 | 用户名     |
 | sign  | 是   | string | 32 | 签名     |
 
