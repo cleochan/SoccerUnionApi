@@ -108,7 +108,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 | 参数名    | 必选 | 类型   | 字段长度        | 说明     |
 | --------- | ---- | ------ | --------------- | -------- |
-| memberId   | 是   | int | 0 < length <= 15 | 用户ID |
+| memberId   | 是   | bigint | 0 < length <= 15 | 用户ID |
 | userName  | 是   | string | 1 < length < 50 | 用户名     |
 | sign  | 是   | string | 32 | 签名     |
 
@@ -169,7 +169,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 | 参数名    | 必选 | 类型   | 字段长度        | 说明     |
 | --------- | ---- | ------ | --------------- | -------- |
-| memberId   | 是   | int | 0 < length < 11 | 用户ID |
+| memberId   | 是   | bigint | 0 < length <= 15 | 用户ID |
 | actionType  | 是   | string | 1 < length < 50 | check=查看余额 update=更新余额     |
 | value  | 是/否   | decimal | 长度15，小数点2位 | check时无需传此参数，update时为必传，且不能为0     |
 | clientOrderId  | 否   | string | 1 < length < 100 | update时可传，第三方订单号，可通过`balance-update-results`接口确认余额更新状态     |
@@ -270,7 +270,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 | 参数名    | 必选 | 类型   | 字段长度        | 说明     |
 | --------- | ---- | ------ | --------------- | -------- |
-| memberId   | 否   | int | 0 < length < 11 | 用户ID，如果不传会返回所有用户的订单 |
+| memberId   | 否   | bigint | 0 < length <= 15 | 用户ID，如果不传会返回所有用户的订单 |
 | startTime  | 否   | datetime | - | 下单时间：开始时间(包含这一秒)     |
 | endTime  | 否   | datetime | - | 下单时间：结束时间(不包含这一秒)    |
 | startUpdatedTime  | 否   | datetime | - | 更新时间：开始时间(包含这一秒)     |
@@ -295,7 +295,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | 参数名     | 类型   | 字段长度        | 说明     |
 | ---------  | ------ | --------------- | -------- |
 | orderId      | decimal | 7 <= length <= 18 | 订单号 |
-| memberId      | int | 0 < length < 11 | 用户ID |
+| memberId      | bigint | 0 < length <= 15 | 用户ID |
 | matchId      | string | 0 < length < 20 | 赛事ID(可能带有英文字母) |
 | kickoffTime     | datetime | - | 开赛时间  |
 | userName      | string | 1 < length < 50 | 用户名 |
