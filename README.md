@@ -574,7 +574,8 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 | 参数名        | 必选  | 类型    | 字段长度          | 说明                                                         |
 | ------------- | ----- | ------- | ----------------- | ------------------------------------------------------------ |
-| memberId      | 是    | bigint  | 0 < length <= 15  | 用户ID                                                       |
+| memberId      | 否    | bigint  | 0 < length <= 15  | 用户ID (ID和用户名只能选其一，不能同时传)                                                      |
+| userName      | 否    | string  | 1 < length <= 50  | 用户名 (ID和用户名只能选其一，不能同时传)                                                       |
 | agentToken    | 是    | string  | 1 < length < 50   | 代理识别号                                                   |
 | actionType    | 是    | string  | 1 < length < 50   | check=查看余额 update=更新余额                               |
 | value         | 是/否 | decimal | 长度15，小数点2位 | check时无需传此参数，update时为必传，且不能为0               |
