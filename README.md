@@ -512,7 +512,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 
 | 参数名     | 必选 | 类型   | 字段长度         | 说明       |
 | ---------- | ---- | ------ | ---------------- | ---------- |
-| memberId   | 是   | bigint | 0 < length <= 15 | 用户ID     |
+| memberId   | 否   | bigint | 0 < length <= 15 | 用户ID (如果为空，系统会自动为该用户名生成一个会员ID)     |
 | userName   | 是   | string | 1 < length < 50  | 用户名     |
 | agentToken | 是   | string | 1 < length < 50  | 代理识别号 |
 | sign       | 是   | string | 32               | 签名       |
