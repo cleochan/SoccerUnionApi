@@ -201,7 +201,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | memberId      | 是    | bigint  | 0 < length <= 15  | 用户ID                                                       |
 | actionType    | 是    | string  | 1 < length < 50   | check=查看余额 update=更新余额                               |
 | value         | 是/否 | decimal | 长度15，小数点2位 | check时无需传此参数，update时为必传，且不能为0               |
-| clientOrderId | 否    | string  | 1 < length < 100  | update时可传，第三方订单号，可通过`balance-update-results`接口确认余额更新状态 |
+| clientOrderId | 是/否    | string  | 1 < length < 100  | update时必传，第三方订单号，可通过`balance-update-results`接口确认余额更新状态 |
 | sign          | 是    | string  | 32                | 签名                                                         |
 
 ##### <span id="2122-----">2.1.2.2 返回参数</span>
@@ -579,7 +579,7 @@ cbc0b11733b785b0317f1cc7d6f20fd8
 | agentToken    | 是    | string  | 1 < length < 50   | 代理识别号                                                   |
 | actionType    | 是    | string  | 1 < length < 50   | check=查看余额 update=更新余额                               |
 | value         | 是/否 | decimal | 长度15，小数点2位 | check时无需传此参数，update时为必传，且不能为0               |
-| clientOrderId | 否    | string  | 1 < length < 100  | update时可传，第三方订单号，可通过`balance-update-results`接口确认余额更新状态 |
+| clientOrderId | 是/否    | string  | 1 < length < 100  | update时必传，第三方订单号，可通过`balance-update-results`接口确认余额更新状态 |
 | sign          | 是    | string  | 32                | 签名                                                         |
 
 ##### <span id="2222-----">2.2.2.2 返回参数</span>
